@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap&subset=latin-ext" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/31ba15360c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <title>Weekly Web Dev Challenge 1</title>
+</head>
+
+<body>
+    <header>
+        <img src="img/masterlab_logo_top.png" alt="company-logo">
+    </header>
+
+    <!-- registration form -->
+    <section class="register-form">
+        <h2>Register Form</h2>
+        <form class="form registration">
+            <div class="username-reg flex">
+                <i class="fas fa-user-alt"></i>
+                <input type="text" class="changer" id="username" placeholder="Username" required></div>
+            <div class="password-reg flex">
+                <i class="fas fa-unlock-alt"></i>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="confirm-reg flex">
+                <i class="fas fa-unlock-alt"></i>
+                <input type="password" id="password-confirmation" placeholder="Confirm Password" required>
+            </div>
+            <div class="email-reg flex">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$"
+                    required>
+            </div>
+            <div class="location-reg flex">
+                <i class="fas fa-map-marker-alt"></i>
+                <select id="location" class="flex" required>
+                    <option value="">Location</option>
+                    <option value="poland">Poland</option>
+                    <option value="eu">Europe</option>
+                    <option value="usa">USA</option>
+                </select>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="rules-checkbox" name="rules">
+                <label for="rules-checkbox">I have read and accept the terms of use</label>
+            </div>
+            <button class="enabled button" id="submit" type="submit">Sign up</button>
+        </form>
+    </section>
+    <!-- end of registration form -->
+
+    <!-- contact form -->
+    <section class="contact">
+        <h2>Send Email</h2>
+        <form class="form mail">
+            <div class="flex">
+                <i class="fas fa-user-alt"></i>
+                <input type="text" id="contact-name" placeholder="Your name" required>
+            </div>
+            <div class="flex">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="contact-email" placeholder="Your email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required>
+            </div>
+            <div class="flex">
+                <textarea rows="10" cols="30" required>Type your message</textarea>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="contacts-checkbox" name="contact">
+                <label for="contacts-checkbox">Send a copy to my Email</label>
+            </div>
+            <button class="enabled button" type="submit">Send</button>
+        </form>
+    </section>
+    <section class="sign-in">
+        <h2>Sign In Form</h2>
+        <form class="form login">
+            <div class="flex">
+                <i class="fas fa-user-alt"></i>
+                <input type="text" id="username-login" placeholder="Username" required>
+            </div>
+            <div class="flex">
+                <i class="fas fa-unlock-alt"></i>
+                <input type="password" id="password-login" placeholder="Password" required>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="remember-me-checkbox" name="login">
+                <label for="remember-me-checkbox">Remember me</label>
+            </div>
+            <button class="enabled button" type="submit">Sign in</button>
+        </form>
+    </section>
+    <!-- end of contact form -->
+
+    <!-- password recovery form -->
+    <section class="recover">
+        <h2>Recover Form</h2>
+        <form class="form recover">
+            <div class="flex">
+                <i class="fas fa-envelope"></i>
+                <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" id="emial-recover"
+                    placeholder="Enter your email" required>
+            </div>
+            <div class="flex">
+                <i class="fas fa-mobile-alt"></i>
+                <input type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{3}" id="phone-number"
+                    placeholder="Enter your phone number" required>
+            </div>
+            <div class="flex-row">
+                <button class="button enabled" type="submit">Send</button>
+                <button type="button" class="button disabled" disabled>Done</button>
+            </div>
+        </form>
+    </section>
+    <!-- end of password recovery form -->
+
+    <!-- subscribe form -->
+    <section class="subscribe">
+        <h2>Subscribe Form</h2>
+        <form class="form subscribe">
+            <div class="flex">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="emial" placeholder="Enter Your email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required>
+            </div>
+            <div class="flex-row">
+                <button class="enabled button" type="submit">Subscribe</button>
+                <button class="button reject">No, thanks</button>
+            </div>
+        </form>
+    </section>
+    <!-- end of subscribe form -->
+
+    <footer>
+        <img src="img/masterlab_logo_bottom.png" alt="company-logo-bottom">
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="script\script.js"></script>
+</body>
+
+</html>

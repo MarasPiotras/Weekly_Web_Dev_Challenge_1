@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open-sans', sans-serif;
+}
+
+body {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100vw;
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
+  font-size: 15px;
+}
+
+section {
+  width: 80vw;
+  background-color: #f4f4f4;
+  box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.35);
+  margin: 5% auto;
+  padding: 5%;
+  text-align: center;
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  width: 80vw;
+  margin: 5vh auto;
+  opacity: .4;
+}
+
+button,
+input,
+select {
+  display: block;
+}
+
+div {
+  margin-top: 2em;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-row button {
+  flex-basis: 45%;
+}
+
+i {
+  flex-basis: 15%;
+  padding: .5em .5em;
+  border: solid 1px lightgray;
+  border-right: 1px solid black;
+  background-color: white;
+}
+
+
+input {
+  padding: .5em;
+  flex-grow: 1;
+  border: solid 1px lightgray;
+}
+
+textarea {
+  padding: .5em;
+  flex-grow: 1;
+  border: solid 1px lightgray;
+  resize: none;
+}
+
+select {
+  flex: 1;
+}
+
+.active input,
+.active textarea {
+  border: 4px solid orange;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.15);
+}
+
+.active i {
+  display: none;
+}
+
+/* custom checkboxes */
+.checkbox {
+  font-size: 12px;
+  text-align: left;
+}
+
+.checkbox input[type="checkbox"] {
+  opacity: 0;
+}
+
+.checkbox label::before {
+  content: "";
+  margin-right: 2em;
+  display: inline-block;
+  height: 1.2em;
+  width: 1.2em;
+  border: 1px solid;
+  border-radius: 10%;
+  transform: translateY(25%);
+}
+
+.checkbox label::after {
+  content: "";
+  display: inline-block;
+  height: 1.2em;
+  width: 1.2em;
+  border: 1px solid black;
+  border-radius: 10%;
+  background-color: #93d02b;
+  transform: translateY(25%);
+}
+
+.checkbox label {
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox label::after {
+  position: absolute;
+  left: 0;
+}
+
+/*Hide the checkmark by default*/
+.checkbox input[type="checkbox"]+label::after {
+  content: none;
+}
+
+/*Unhide the checkmark on the checked state*/
+.checkbox input[type="checkbox"]:checked+label::after {
+  content: "";
+}
+
+/* custom checkboxes end */
+
+.sign-in p,
+.contact p {
+  flex-basis: 60%;
+  flex-grow: 1;
+}
+
+button {
+  width: 100%;
+  padding: 1em;
+  background-color: #93d02b;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5%;
+  margin-top: 2em;
+  transition: .3s;
+}
+
+.reject.button {
+  background-color: #f4495b;
+  cursor: pointer;
+}
+
+.enabled:hover {
+  cursor: pointer;
+  background-color: orange;
+}
+
+.disabled:disabled {
+  opacity: .7;
+  cursor: not-allowed;
+}
+
+#submit:disabled {
+  background-color: #f4495b;
+  opacity: 1;
+}
+
+@media (orientation: landscape) {
+  img {
+    width: 40vw;
+  }
+}
+
+@media (min-width: 1025px) {
+  body {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-template-rows: auto;
+    grid-template-areas: "header header header header"
+      ". registration sign-in ."
+      ". registration recover ."
+      ". contact recover ."
+      ". contact subscribe ."
+      ". contact footer .";
+  }
+
+  section {
+    width: 30vw;
+    padding: 1em;
+    align-self: start;
+  }
+
+  .recover {
+    align-self: center;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  .register-form {
+    grid-area: registration;
+  }
+
+  .contact {
+    grid-area: contact;
+  }
+
+  .sign-in {
+    grid-area: sign-in;
+  }
+
+  .recover {
+    grid-area: recover;
+  }
+
+  .subscribe {
+    grid-area: subscribe;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  img {
+    width: 30vw;
+  }
+
+  input {
+    padding: 1em;
+  }
+
+  i {
+    padding: 1em;
+  }
+
+  .password-reg::after {
+    bottom: -45%;
+  }
+}
